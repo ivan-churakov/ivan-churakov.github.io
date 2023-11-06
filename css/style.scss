@@ -343,6 +343,9 @@ h6 {
 .dark {
   color: $dark-gray;
 }
+.orange {
+    color: $header-bg!important;
+}
 .sky {
   color: $sky;
 }
@@ -3224,7 +3227,7 @@ header {
 
 /* 404 page */
 .sec-notFound {
-  background-color: $light-sky;
+  background-color: $bg;
   background-image: url(../img/bg/bg404.png);
   background-repeat: no-repeat;
   background-position: center center;

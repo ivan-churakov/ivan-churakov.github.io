@@ -272,6 +272,10 @@ h6 {
   color: #373737;
 }
 
+.orange {
+  color: rgba(246, 109, 32, 0.9882352941) !important;
+}
+
 .sky {
   color: #69aeff;
 }
@@ -3623,7 +3627,7 @@ header .hoverMenu {
 
 /* 404 page */
 .sec-notFound {
-  background-color: #f6faff;
+  background-color: #222223;
   background-image: url(../img/bg/bg404.png);
   background-repeat: no-repeat;
   background-position: center center;
