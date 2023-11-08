@@ -3440,7 +3440,7 @@ header {
     &-compare-3,
     &-compare-4 {
       padding-bottom: 2em;
-      color: $white;
+      // color: $white;
     }
     &-button {
       display: flex !important;
@@ -3463,6 +3463,7 @@ header {
     &-pagination-fraction {
       font-weight: 700;
       bottom: 0.25em;
+      color: $white;
     }
   }
 }

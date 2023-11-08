@@ -3872,7 +3872,6 @@ header .hoverMenu {
 }
 .sec-compare .swiper-compare, .sec-compare .swiper-compare-2, .sec-compare .swiper-compare-3, .sec-compare .swiper-compare-4 {
   padding-bottom: 2em;
-  color: #fff;
 }
 .sec-compare .swiper-button, .sec-compare .swiper-button-prev, .sec-compare .swiper-button-next {
   display: flex !important;
@@ -3895,6 +3894,7 @@ header .hoverMenu {
 .sec-compare .swiper-pagination-fraction {
   font-weight: 700;
   bottom: 0.25em;
+  color: #fff;
 }
 
 .deleteAll svg {
