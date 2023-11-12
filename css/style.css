@@ -1603,7 +1603,6 @@ header .hoverMenu {
   position: relative;
   z-index: 10;
   margin-bottom: 0px;
-  font-size: 36px;
 }
 .main-tiles-item:nth-child(1) {
   grid-area: area1;
