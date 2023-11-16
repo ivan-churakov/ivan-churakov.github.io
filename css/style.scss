@@ -199,8 +199,11 @@ h1 {
 h2 {
   font-size: 2.5em;
   margin-bottom: 0.5em;
-  @media (max-width: $bp-md) {
+  @media (max-width: $bp-xxl) {
     font-size: 2em;
+  }
+  @media (max-width: $bp-md) {
+    font-size: 1.8em;
   }
   @media (max-width: $bp-sm) {
     font-size: 1.65em;
@@ -321,19 +324,19 @@ h6 {
   }
 }
 .link {
+  color: $white;
+  transition: $transition;
+  &.white {
     color: $white;
-    transition: $transition;
-    &.white {
-      color: $white;
-    }
-    &:hover,
-    &:focus {
-      color: $sky;
-    }
-    &:active {
-      color: $blue;
-    }
   }
+  &:hover,
+  &:focus {
+    color: $sky;
+  }
+  &:active {
+    color: $blue;
+  }
+}
 .white {
   color: $white;
 }
@@ -344,7 +347,7 @@ h6 {
   color: $dark-gray;
 }
 .orange {
-    color: $header-bg!important;
+  color: $header-bg !important;
 }
 .sky {
   color: $sky;
@@ -355,8 +358,6 @@ h6 {
 .green {
   color: $green2;
 }
-
-
 
 /* Form elements */
 input,
@@ -1509,11 +1510,13 @@ header {
   padding-top: 3em;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: var(--h1) var(--h2) var(--h3);
+  grid-template-rows: var(--h1) var(--h1) var(--h1) var(--h2) var(--h3);
   grid-template-areas:
     "area1 area1 area2 area2 area3 area3"
-    "area4 area5 area6 area6 area6 area6"
-    "area7 area7 area7 area7 area8 area8";
+    "area4 area4 area5 area5 area6 area6"
+    "area7 area7 area8 area8 area9 area9"
+    "area10 area11 area12 area12 area12 area12"
+    "area13 area13 area13 area13 area14 area14";
   gap: 2em;
   overflow: hidden;
   &.cut {
@@ -1534,12 +1537,15 @@ header {
     --h2: 200px;
     --h3: 230px;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: var(--h1) var(--h2) var(--h3) var(--h4);
+    grid-template-rows: var(--h1) var(--h1) var(--h1) var(--h1) var(--h2) var(--h3) var(--h4);
     grid-template-areas:
       "area1 area1 area1 area1 area2 area2 area2 area2"
-      "area4 area4 area3 area3 area3 area3 area5 area5"
-      "area6 area6 area6 area6 area6 area6 area6 area6"
-      "area7 area7 area7 area7 area7 area8 area8 area8";
+      "area3 area3 area3 area3 area4 area4 area4 area4"
+      "area5 area5 area5 area5 area6 area6 area6 area6"
+      "area7 area7 area7 area7 area8 area8 area8 area8"
+      "area10 area10 area9 area9 area9 area9 area11 area11"
+      "area12 area12 area12 area12 area12 area12 area12 area12"
+      "area13 area13 area13 area13 area13 area14 area14 area14";
     font-size: 0.8em;
     &.cut {
       grid-template-rows: var(--h1) var(--h2);
@@ -1567,7 +1573,7 @@ header {
     h3 {
       position: relative;
       z-index: 10;
-      margin-bottom: 0px;
+      margin-bottom: 0;
       // font-size: 36px;
     }
   }
@@ -1612,6 +1618,121 @@ header {
     color: $white;
     text-align: center;
     position: relative;
+    @include flex(row, center, center, nowrap);
+    img {
+      position: absolute;
+      right: 0px;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+  &-item:nth-child(4) {
+    grid-area: area4;
+    background-color: $card;
+    color: $white;
+    text-align: right;
+    position: relative;
+    @include flex(row, flex-end, flex-end, nowrap);
+    background-image: url(../img/bg/ellipse.svg);
+    background-repeat: no-repeat;
+    background-size: auto 120%;
+    background-position: -30% 280%;
+    img {
+      position: absolute;
+      left: 0px;
+      bottom: 0%;
+      height: 100%;
+      z-index: 2;
+      border-radius: $radius * 2;
+    }
+  }
+  &-item:nth-child(5) {
+    grid-area: area5;
+    background-color: $card;
+    color: $white;
+    text-align: center;
+    position: relative;
+    @include flex(row, flex-end, flex-end, nowrap);
+    background-image: url(../img/bg/ellipse.svg);
+    background-repeat: no-repeat;
+    background-size: auto 120%;
+    background-position: 150% 50%;
+    img {
+      position: absolute;
+      left: 0px;
+      bottom: 0%;
+      height: 100%;
+      z-index: 2;
+      border-radius: $radius * 2;
+    }
+  }
+  &-item:nth-child(6) {
+    grid-area: area6;
+    background-color: $card;
+    color: $white;
+    text-align: center;
+    position: relative;
+    @include flex(row, center, center, nowrap);
+    img {
+      position: absolute;
+      left: 0px;
+      bottom: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+  }
+  &-item:nth-child(7) {
+    grid-area: area7;
+    background-color: $card;
+    color: $white;
+    text-align: center;
+    position: relative;
+    @include flex(row, flex-end, flex-end, nowrap);
+    background-image: url(../img/bg/ellipse.svg);
+    background-repeat: no-repeat;
+    background-size: auto 120%;
+    background-position: 40% -240%;
+    img {
+      position: absolute;
+      left: 0px;
+      bottom: 0%;
+      height: 100%;
+      z-index: 2;
+      border-radius: $radius * 2;
+      @media (max-width: 991px) {
+        height: 115%;
+      }
+    }
+  }
+  &-item:nth-child(8) {
+    grid-area: area8;
+    background-color: $card;
+    color: $white;
+    text-align: center;
+    position: relative;
+    @include flex(row, flex-end, flex-end, nowrap);
+    background-image: url(../img/bg/ellipse.svg);
+    background-repeat: no-repeat;
+    background-size: auto 120%;
+    background-position: -15% -150%;
+    img {
+      position: absolute;
+      left: 0px;
+      bottom: 0%;
+      height: 100%;
+      z-index: 2;
+      border-radius: $radius * 2;
+    }
+  }
+  &-item:nth-child(9) {
+    grid-area: area9;
+    background-color: $card;
+    color: $white;
+    text-align: center;
+    position: relative;
     @include flex(row, flex-end, flex-start, nowrap);
     background-image: url(../img/bg/ellipse.svg);
     background-repeat: no-repeat;
@@ -1623,13 +1744,11 @@ header {
       bottom: 0%;
       height: 100%;
       z-index: 2;
-      @media (max-width: 991px) {
-        height: 115%;
-      }
+      border-radius: $radius * 2;
     }
   }
-  &-item:nth-child(4) {
-    grid-area: area4;
+  &-item:nth-child(10) {
+    grid-area: area10;
     background-color: $violet;
     color: $white;
     text-align: center;
@@ -1663,8 +1782,8 @@ header {
       }
     }
   }
-  &-item:nth-child(5) {
-    grid-area: area5;
+  &-item:nth-child(11) {
+    grid-area: area11;
     background-color: $green2;
     color: $white;
     text-align: center;
@@ -1696,8 +1815,8 @@ header {
       }
     }
   }
-  &-item:nth-child(6) {
-    grid-area: area6;
+  &-item:nth-child(12) {
+    grid-area: area12;
     background-color: $header-bg;
     color: $white;
     text-align: center;
@@ -1728,8 +1847,8 @@ header {
       }
     }
   }
-  &-item:nth-child(7) {
-    grid-area: area7;
+  &-item:nth-child(13) {
+    grid-area: area13;
     color: $white;
     text-align: center;
     position: relative;
@@ -1832,8 +1951,8 @@ header {
       }
     }
   }
-  &-item:nth-child(8) {
-    grid-area: area8;
+  &-item:nth-child(14) {
+    grid-area: area14;
     background-color: $bg;
     color: $white;
     text-align: center;
@@ -1867,6 +1986,24 @@ header {
     }
   }
 }
+
+// @media (max-width: $bg-xl) {
+//   .main-tiles-item:nth-child(6)::before {
+//     right: -7%;
+//   }
+// }
+@media (max-width: $bp-xl) {
+  .main-tiles-item:nth-child(6)::before {
+    right: -8%;
+  }
+}
+
+@media (max-width: $bp-lg) {
+  .main-tiles-item:nth-child(6)::before {
+    right: -4%;
+  }
+}
+
 
 .sec-quiz {
   background: url(../img/bg/BG.jpg) no-repeat center;
@@ -2001,6 +2138,23 @@ header {
   &-bar {
     background-color: $header-bg;
     border-radius: 3px;
+  }
+}
+
+.main-tiles-item .saleM {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media (max-width: $bp-xxl) {
+  .main-tiles-item .saleM {
+    margin-bottom: -10px;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .main-tiles-item .saleM {
+    margin-bottom: -5px;
   }
 }
 
@@ -3195,7 +3349,8 @@ header {
       height: 43vw;
     }
   }
-  .btn-1, .btn-5 {
+  .btn-1,
+  .btn-5 {
     font-size: 1.5em;
     padding: 0.8em 1.1em;
     @media (max-width: $bp-sm) {
